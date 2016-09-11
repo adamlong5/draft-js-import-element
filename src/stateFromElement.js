@@ -99,6 +99,7 @@ const ELEM_TO_ENTITY = {
   a(tagName: string, element: DOMElement): ?string {
     let data = getEntityData(tagName, element);
     // Don't add `<a>` elements with no href.
+    console.log('entity data', data)
     if (data.url != null) {
       return Entity.create(ENTITY_TYPE.LINK, 'MUTABLE', data);
     }
