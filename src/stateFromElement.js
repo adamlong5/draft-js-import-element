@@ -1,13 +1,13 @@
 /* @flow */
 
 import replaceTextWithMeta from './lib/replaceTextWithMeta';
-import {
+const {
   CharacterMetadata,
   ContentBlock,
   ContentState,
   Entity,
   genKey,
-} from 'draft-js';
+} = global.Draft
 import {List, OrderedSet, Repeat, Seq} from 'immutable';
 import {BLOCK_TYPE, ENTITY_TYPE, INLINE_STYLE} from 'draft-js-utils';
 import {NODE_TYPE_ELEMENT, NODE_TYPE_TEXT} from 'synthetic-dom';
