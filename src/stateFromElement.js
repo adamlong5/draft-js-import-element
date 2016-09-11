@@ -79,6 +79,8 @@ const getEntityData = (tagName: string, element: DOMElement) => {
   const data = {};
   if (ELEM_ATTR_MAP.hasOwnProperty(tagName)) {
     const attrMap = ELEM_ATTR_MAP[tagName];
+    console.log(element)
+    console.log(element.attributes)
     for (let i = 0; i < element.attributes.length; i++) {
       const {name, value} = element.attributes[i];
       if (value != null) {
@@ -100,7 +102,7 @@ const ELEM_TO_ENTITY = {
     let data = getEntityData(tagName, element);
     // Don't add `<a>` elements with no href.
     console.log('entity data', data)
-    if (data.url != null) {
+    if (data.href != null) {
       return Entity.create(ENTITY_TYPE.LINK, 'MUTABLE', data);
     }
   },
